@@ -1,14 +1,20 @@
-<ion-view view-title="Allegro">
+<ion-view view-title="Allegro" ng-controller="SearchController">
   <ion-content>
       <div class="list list-inset">
           <label class="item item-input">
               <i class="icon ion-search placeholder-icon"></i>
-              <input type="text" placeholder="Czego szukasz?">
+              <input type="text" placeholder="Czego szukasz?" ng-model="criteria.title">
           </label>
           <div>
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="search()">
                   Szukaj
               </button>
+          </div>
+          <div class="list">
+              <a class="item item-thumbnail-left" href="#/app/playlists/{{item.id}}" ng-repeat="item in items">
+                  <img src="cover.jpg">
+                  <h2>{{item.title}}</h2>
+              </a>
           </div>
       </div>
   </ion-content>

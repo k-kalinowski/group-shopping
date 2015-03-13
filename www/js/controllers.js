@@ -45,4 +45,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+.controller('SearchController', function($scope, $stateParams) {
+        $scope.items =[ { id:"1", title:'test1', id:"1", price:"1000"}, {id:"1", title:'test2', price:"2000"}]
+    })
