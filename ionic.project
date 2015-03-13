@@ -1,7 +1,7 @@
 {
   "name": "braincode",
   "app_id": "",
-   "proxies": [{
+  "proxies": [{
         "path": "/api",
         "proxyUrl": "https://api.natelefon.pl:9901/v2/allegro"
       }]
