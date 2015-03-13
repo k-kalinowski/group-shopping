@@ -47,6 +47,19 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('SearchController', function($scope, $stateParams) {
-        $scope.items =[ { id:"1", title:'test1', id:"1", price:"1000"}, {id:"1", title:'test2', price:"2000"}]
+.controller('SearchController', function($scope, $log, $stateParams, searchService) {
+        //var vm = this;
+        $scope.criteria = {
+            text:""
+        };
+        $scope.search = function() {
+            var promise = searchService.getItems($scope.criteria.text);
+            promise.then(
+                function (result) {
+                    $scope.items = result.data.offers;
+                },
+                function (errorPayload) {
+                    $log.error('failure loading items', errorPayload);
+                });
+        }
     })
