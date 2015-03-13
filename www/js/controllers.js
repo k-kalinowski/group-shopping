@@ -45,4 +45,21 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+
+.controller('SearchController', function($scope, $log, $stateParams, searchService) {
+        //var vm = this;
+        $scope.criteria = {
+            text:""
+        };
+        $scope.search = function() {
+            var promise = searchService.getItems($scope.criteria.text);
+            promise.then(
+                function (result) {
+                    $scope.items = result.data.offers;
+                },
+                function (errorPayload) {
+                    $log.error('failure loading items', errorPayload);
+                });
+        }
+    })
