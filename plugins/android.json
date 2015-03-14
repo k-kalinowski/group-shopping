@@ -11,14 +11,6 @@
                         {
                             "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"LaunchMyApp\"><param name=\"android-package\" value=\"nl.xservices.plugins.LaunchMyApp\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -30,12 +22,6 @@
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
-                    ],
-                    "/*/application/activity": [
-                        {
-                            "xml": "<intent-filter><data android:scheme=\"kzm\" /><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /></intent-filter>",
-                            "count": 1
-                        }
                     ]
                 }
             }
@@ -43,23 +29,6 @@
     },
     "installed_plugins": {
         "nl.x-services.plugins.socialsharing": {
-            "PACKAGE_NAME": "com.ionicframework.braincode505146"
-        },
-<<<<<<< HEAD
-        "nl.x-services.plugins.launchmyapp": {
-            "URL_SCHEME": "kzm",
-=======
-        "com.ionic.keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.braincode505146"
-        },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.ionicframework.braincode505146"
-        },
-        "org.apache.cordova.device": {
->>>>>>> 6a712b51b6527d0eb0d1007fa8ac2b979cb598ab
-            "PACKAGE_NAME": "com.ionicframework.braincode505146"
-        },
-        "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         }
     },
