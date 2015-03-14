@@ -41,8 +41,18 @@
         "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         },
+<<<<<<< HEAD
         "nl.x-services.plugins.launchmyapp": {
             "URL_SCHEME": "kzm",
+=======
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.braincode505146"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.ionicframework.braincode505146"
+        },
+        "org.apache.cordova.device": {
+>>>>>>> 6a712b51b6527d0eb0d1007fa8ac2b979cb598ab
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         }
     },
