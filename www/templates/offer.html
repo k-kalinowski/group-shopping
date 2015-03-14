@@ -10,7 +10,9 @@
 
           <div class="item item-body">
               <img class="full-image" ng-src="{{vm.item.mainImage.medium}}">
-              <button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('Kup za mniej - OnePlus One #allegro.123424154', 'https://www.google.nl/images/srpr/logo4w.png', 'http://allegro.pl/auckcja/123424154')">Share on twitter</button>
+              <!--<button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('{{vm.getName()}}', '{{vm.item.mainImage.small}}', 'http://allegro.pl/aukcja/123424154')">Share on twitter</button>-->
+              <button class="button button-calm" ng-click="vm.getName()">Share on twitter</button>
+
               <p>
                   {{vm.item.description.plainText}}
               </p>

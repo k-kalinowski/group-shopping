@@ -36,6 +36,10 @@ angular.module('starter.controllers', [])
 .controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService) {
         var vm = this;
 
+        vm.getName = function(){
+            return window.plugins.socialsharing.shareViaTwitter("Kup za mniej - " + vm.item.name  + " #allegro" + vm.item.id, vm.item.mainImage.small, 'http://allegro.pl/aukcja/123424154');
+        };
+
         var promise = offerService.getItem($state.params.id);
 
         promise.then(function(result){
