@@ -1,8 +1,8 @@
 angular.module('starter.services')
     .factory('chartService', function() {
-        var values = [{from: 0, to: 10, color: '#C00000', price: 0},
-            {from: 10, to: 20, color: '#FFC000', price: 0},
-            {from: 20, to: 30, color: '#9BBB59', price: 0}
+        var values = [{from: 0, to: 9.5, color: '#C00000', price: 0},
+            {from: 9.5, to: 19.5, color: '#FFC000', price: 0},
+            {from: 19.5, to: 30, color: '#9BBB59', price: 0}
         ];
 
         return {
