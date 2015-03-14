@@ -66,8 +66,8 @@ angular.module('starter.controllers', [])
 
         vm.showAlert = function() {
             var alertPopup = $ionicPopup.alert({
-                title: 'Gratulacje Kupiłeś za mniej!',
-                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać korzystaniejszą ceną promuj aukcję',
+                title: 'Gratulacje! Kupiłeś za mniej!',
+                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać lepszą cenę, podziel się aukcją z innymi!',
                 buttons: [
                     {
                         text: '<b>OK</b>',
