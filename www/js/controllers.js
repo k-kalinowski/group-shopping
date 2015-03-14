@@ -36,7 +36,7 @@ angular.module('starter.controllers', [])
 .controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService, $ionicPopup, $timeout) {
 
         var vm = this;
-        vm.counter = 8;
+        vm.counter = 9;
         vm.discounts = chartService.values;
         chartService.chart(vm.counter);
 
