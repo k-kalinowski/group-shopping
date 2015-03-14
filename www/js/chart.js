@@ -79,9 +79,9 @@ angular.module('starter.services')
                         valueSuffix: ' sztuk'
 
                     }
-                }, {name: '350,00', color: 'rgb(192, 0, 0)', showInLegend: true},
-                    {name: '340,00', color: 'rgb(255, 192, 0)', showInLegend: true},
-                    {name: '330,00', color: 'rgb(155, 187, 89)', showInLegend: true}
+                }, {name: '350,00 zł', color: 'rgb(192, 0, 0)', showInLegend: true},
+                    {name: '340,00 zł', color: 'rgb(255, 192, 0)', showInLegend: true},
+                    {name: '330,00 zł', color: 'rgb(155, 187, 89)', showInLegend: true}
                 ]
 
             });
