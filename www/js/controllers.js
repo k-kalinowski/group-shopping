@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
                 });
         }
 })
-    .controller("TwitterController", function($scope, $ionicPlatform, twitterService){
+    .controller("TwitterController", function($scope,$resource, $ionicPlatform, twitterService){
         var vm = this;
         vm.correctTimestring = function(string) {
             return new Date(Date.parse(string));
