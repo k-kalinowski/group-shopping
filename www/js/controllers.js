@@ -73,4 +73,31 @@ angular.module('starter.controllers', [])
                     $log.error('failure loading items', error);
                 });
         }
+})
+    .controller("TwitterController", function($scope, $ionicPlatform, twitterService){
+        var vm = this;
+        vm.correctTimestring = function(string) {
+            return new Date(Date.parse(string));
+        };
+        // 2
+        vm.showHomeTimeline = function() {
+            vm.home_timeline = twitterService.getHomeTimeline();
+        };
+        // 3
+        vm.doRefresh = function() {
+            vm.showHomeTimeline();
+            vm.$broadcast('scroll.refreshComplete');
+        };
+        // 4
+        $ionicPlatform.ready(function() {
+            if (twitterService.isAuthenticated()) {
+                vm.showHomeTimeline();
+            } else {
+                twitterService.initialize().then(function(result) {
+                    if(result === true) {
+                        vm.showHomeTimeline();
+                    }
+                });
+            }
+        });
     });

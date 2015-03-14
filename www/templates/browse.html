@@ -1,5 +1,24 @@
-<ion-view view-title="Browse">
-  <ion-content>
-    <h1>Browse</h1>
-  </ion-content>
+<ion-view view-title="Browse" ng-controller="TwitterController as vm">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">My Twitter Feed</h1>
+    </ion-header-bar>
+    <ion-content class="has-header padding">
+        <ion-refresher on-refresh="vm.doRefresh()"></ion-refresher>
+
+        <div ng-show="vm.home_timeline.length == 0">Loading tweets...</div>
+
+        <div ng-repeat="entry in vm.home_timeline" class="list card">
+            <div class="item item-avatar">
+                <img ng-src=""/>
+                <h2></h2>
+                <p></p>
+            </div>
+
+            <div class="item item-body">
+                <p ng-bind-html="entry.text"></p>
+                <img ng-if="entry.extended_entities" ng-src="" style="width: 100%;"/>
+            </div>
+
+        </div>
+    </ion-content>
 </ion-view>
