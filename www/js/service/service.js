@@ -3,4 +3,4 @@
  */
 angular.module('starter.services', [])
     .value('restUrl', 'https://api.natelefon.pl:9901/v2/allegro')
-    .value('accessToken', '0a67a01f2c3ae3e23bd2bcb485997cb6');
+    .value('accessToken', '4ddfa5b2576f4620d0c436a06dca2fb9');

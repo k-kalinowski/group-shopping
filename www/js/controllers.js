@@ -93,6 +93,10 @@ angular.module('starter.controllers', [])
                     $log.error('failure loading items', error);
                 });
         }
+   
+        $scope.random = function(){
+            return Math.floor(Math.random() * 10);
+        }
 })
     .controller("TwitterController", function($scope,$resource, $ionicPlatform, twitterService){
         var vm = this;

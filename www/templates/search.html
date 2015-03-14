@@ -15,10 +15,11 @@
               <a class="item item-thumbnail-left" href="#/app/offer/{{item.id}}" ng-repeat="item in vm.items">
                   <img ng-src="{{item.mainImage.small}}">
                   <div class="wrap">{{item.name}}</div>
+                  <div class="wrap">kupionych: {{random()}}</div>
               </a>
           </div>
       </div>
-       <button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('Kup za mniej - OnePlus One <a href=\'kzm://123424154\'>#allegro.123424154<a/>', 'https://www.google.nl/images/srpr/logo4w.png', 'kzm://123424154')">Share on twitter</button>
+       <!--<button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('Kup za mniej - OnePlus One <a href=\'kzm://123424154\'>#allegro.123424154<a/>', 'https://www.google.nl/images/srpr/logo4w.png', 'kzm://123424154')">Share on twitter</button>-->
       </form>
   </ion-content>
 </ion-view>

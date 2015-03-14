@@ -16,6 +16,7 @@
   },
   "cordovaPlugins": [
     "https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git",
-    "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git"
+    "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+    "nl.x-services.plugins.socialsharing"
   ]
 }
