@@ -9,11 +9,11 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"com.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
                             "count": 1
                         },
                         {
@@ -40,10 +40,10 @@
         }
     },
     "installed_plugins": {
-        "nl.x-services.plugins.socialsharing": {
+        "com.ionic.keyboard": {
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         },
-        "com.ionic.keyboard": {
+        "nl.x-services.plugins.socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         },
         "org.apache.cordova.console": {
