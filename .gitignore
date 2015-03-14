@@ -2,3 +2,6 @@
 /nbproject/
 /platforms/
 /node_modules/
+\.settings
+\.classpath
+\.project
