@@ -33,12 +33,23 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService) {
+.controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService, $ionicPopup, $timeout) {
 
         var vm = this;
         vm.counter = 8;
-
+        vm.discounts = chartService.values;
         chartService.chart(vm.counter);
+
+        var promise = offerService.getItem($state.params.id);
+
+        promise.then(function(result){
+            vm.item = result.data;
+            chartService.init(vm.item.prices.buyNow);
+        }, function(error){
+            $log.error('failure loading items', error);
+        });
+
+
 
         vm.getName = function(){
             return window.plugins.socialsharing.shareViaTwitter("Kup za mniej - " + vm.item.name  + " #allegro" + vm.item.id, vm.item.mainImage.small, 'http://allegro.pl/aukcja/123424154');
@@ -46,16 +57,28 @@ angular.module('starter.controllers', [])
 
         vm.buy = function(){
             chartService.chart(++vm.counter);
+            $timeout(function() {
+                vm.showAlert();
+            }, 2000);
         };
 
-        var promise = offerService.getItem($state.params.id);
 
-        promise.then(function(result){
-            vm.item = result.data;
 
-        }, function(error){
-            $log.error('failure loading items', error);
-        });
+        vm.showAlert = function() {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Gratulacje Kupiłeś za mniej!',
+                template: 'Prosimy poczekać na zakończenie oferty aby poznać końcową cenę.',
+                buttons: [
+                    {
+                        text: '<b>Save</b>',
+                        type: 'button-stable'
+                    }
+                ]
+            });
+            alertPopup.then(function(res) {
+                console.log('Thank you for not eating my delicious ice cream cone');
+            });
+        };
 })
 
 .controller('SearchController', function($scope, $log, $stateParams, searchService) {
