@@ -1,6 +1,7 @@
 /build/
 /nbproject/
 /platforms/
+/plugins/
 /node_modules/
 \.settings
 \.classpath

@@ -36,7 +36,7 @@ angular.module('starter.controllers', [])
 .controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService, $ionicPopup, $timeout) {
 
         var vm = this;
-        vm.counter = 8;
+        vm.counter = 9;
         vm.discounts = chartService.values;
         chartService.chart(vm.counter);
 
@@ -66,8 +66,8 @@ angular.module('starter.controllers', [])
 
         vm.showAlert = function() {
             var alertPopup = $ionicPopup.alert({
-                title: 'Gratulacje Kupiłeś za mniej!',
-                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać korzystaniejszą ceną promuj aukcję',
+                title: 'Gratulacje! Kupiłeś za mniej!',
+                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać lepszą cenę, podziel się aukcją z innymi!',
                 buttons: [
                     {
                         text: '<b>OK</b>',
