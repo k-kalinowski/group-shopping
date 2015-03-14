@@ -1,39 +1,69 @@
 <ion-view view-title="Szczegóły aukcji" ng-controller="OfferCtrl as vm">
-  <ion-content>
-      <div class="list card">
-          <div class="item item-avatar">
-              <img src="{{vm.item.mainImage.small}}">
-              <h2>{{vm.item.name}}</h2>
-              <p>{{vm.item.endingTime}}</p>
-              <p>{{vm.item.quantities.available}} z {{vm.item.quantities.available + vm.item.quantities.sold}} sztuk </p>
-          </div>
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="{{vm.item.mainImage.small}}">
+                <h2>{{vm.item.name}}</h2>
+                <p>{{vm.item.endingTime*1000|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                <p> dostępnych {{vm.item.quantities.available}} z {{vm.item.quantities.available + vm.item.quantities.sold}}
+                    sztuk </p>
+            </div>
+            <div class="item item-body">
+                <button class="button icon ion-social-twitter button-stable" ng-click="vm.getName()"></button>
+                <button class="button icon ion-android-share-alt button-stable" ng-click=""></button>
+                <button class="button icon ion-android-favorite-outline button-stable"></button>
+                <div class="padding"></div>
+                <div class="item item-text-wrap">
+                   Cena przedmiotu {{vm.item.prices.buyNow|currency}}
+                </div>
+                <img class="full-image" ng-src="{{vm.item.mainImage.medium}}">
+                <div class="row">
+                    <div class="col">
+                        <button class="button button-block button-assertive" ng-click="vm.buy()">Kup za mniej</button>
+                    </div>
+                </div>
+                <div id="container"></div>
+                <div class="row">
+                    <div class="col">
+                        <div id="legend">
+                            <div class="row">
+                                <div class="col-20 legendBox" style="background-color: #C00000;"></div>
+                                <div class="col-80 col-offset-10">{{vm.discounts[0].price|currency}} za szt.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-20 legendBox" style="background-color: #FFC000;"></div>
+                                <div class="col-80 col-offset-10">{{vm.discounts[1].price|currency}} za szt.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-20 legendBox" style="background-color: #9BBB59;"></div>
+                                <div class="col-80 col-offset-10">{{vm.discounts[2].price|currency}} za szt.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{vm.item.description.plainText}}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-          <div class="item item-body">
-              <img class="full-image" ng-src="{{vm.item.mainImage.medium}}">
-              <button class="button button-calm">Kup teraz</button>
-              <button class="button button-assertive" ng-click="vm.buy()">Kup za mniej</button>
-              <div id="container"></div>
-              <button class="button button-calm" ng-click="vm.getName()">Share on twitter</button>
-              <p>
-                  {{vm.item.description.plainText}}
-              </p>
-
-          </div>
-
-          <div class="item tabs tabs-secondary tabs-icon-left">
-              <a class="tab-item" href="#">
-                  <i class="icon ion-thumbsup"></i>
-                  Like
-              </a>
-              <a class="tab-item" href="#">
-                  <i class="icon ion-chatbox"></i>
-                  Comment
-              </a>
-              <a class="tab-item" href="#">
-                  <i class="icon ion-share"></i>
-                  Share
-              </a>
-          </div>
-      </div>
-  </ion-content>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsup"></i>
+                    Like
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-android-share-alt"></i>
+                    Share
+                </a>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

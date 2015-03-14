@@ -33,29 +33,49 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService) {
+.controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService, chartService, $ionicPopup, $timeout) {
 
         var vm = this;
         vm.counter = 8;
-
+        vm.discounts = chartService.values;
         chartService.chart(vm.counter);
+
+        var promise = offerService.getItem($state.params.id);
+
+        promise.then(function(result){
+            vm.item = result.data;
+            chartService.init(vm.item.prices.buyNow);
+        }, function(error){
+            $log.error('failure loading items', error);
+        });
+
+
 
         vm.getName = function(){
             return window.plugins.socialsharing.shareViaTwitter("Kup za mniej - " + vm.item.name  + " #allegro" + vm.item.id, vm.item.mainImage.small, 'http://allegro.pl/aukcja/123424154');
         };
 
         vm.buy = function(){
-            chartService.chart(vm.counter++);
+            chartService.chart(++vm.counter);
+            $timeout(function() {
+                vm.showAlert();
+            }, 2000);
         };
 
-        var promise = offerService.getItem($state.params.id);
 
-        promise.then(function(result){
-            vm.item = result.data;
 
-        }, function(error){
-            $log.error('failure loading items', error);
-        });
+        vm.showAlert = function() {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Gratulacje Kupiłeś za mniej!',
+                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać korzystaniejszą ceną promuj aukcję',
+                buttons: [
+                    {
+                        text: '<b>OK</b>',
+                        type: 'button-stable'
+                    }
+                ]
+            });
+        };
 })
 
 .controller('SearchController', function($scope, $log, $stateParams, searchService) {
@@ -74,7 +94,7 @@ angular.module('starter.controllers', [])
                 });
         }
 })
-    .controller("TwitterController", function($scope, $ionicPlatform, twitterService){
+    .controller("TwitterController", function($scope,$resource, $ionicPlatform, twitterService){
         var vm = this;
         vm.correctTimestring = function(string) {
             return new Date(Date.parse(string));

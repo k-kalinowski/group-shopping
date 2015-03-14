@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"LaunchMyApp\"><param name=\"android-package\" value=\"nl.xservices.plugins.LaunchMyApp\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -53,6 +57,9 @@
         },
         "org.apache.cordova.device": {
 >>>>>>> 6a712b51b6527d0eb0d1007fa8ac2b979cb598ab
+            "PACKAGE_NAME": "com.ionicframework.braincode505146"
+        },
+        "org.apache.cordova.inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.braincode505146"
         }
     },
