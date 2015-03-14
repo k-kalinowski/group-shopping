@@ -67,16 +67,13 @@ angular.module('starter.controllers', [])
         vm.showAlert = function() {
             var alertPopup = $ionicPopup.alert({
                 title: 'Gratulacje Kupiłeś za mniej!',
-                template: 'Prosimy poczekać na zakończenie oferty aby poznać końcową cenę.',
+                template: 'Ostateczna cena będzie znana po zakończeniu aukcji. Jeśli chcesz uzyskać korzystaniejszą ceną promuj aukcję',
                 buttons: [
                     {
-                        text: '<b>Save</b>',
+                        text: '<b>OK</b>',
                         type: 'button-stable'
                     }
                 ]
-            });
-            alertPopup.then(function(res) {
-                console.log('Thank you for not eating my delicious ice cream cone');
             });
         };
 })
