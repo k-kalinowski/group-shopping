@@ -1,0 +1,36 @@
+<ion-view view-title="Szczegóły aukcji" ng-controller="OfferCtrl as vm">
+  <ion-content>
+      <div class="list card">
+          <div class="item item-avatar">
+              <img src="{{vm.item.mainImage.small}}">
+              <h2>{{vm.item.name}}</h2>
+              <p>{{vm.item.endingTime}}</p>
+              <p>{{vm.item.quantities.available}} z {{vm.item.quantities.available + vm.item.quantities.sold}} sztuk </p>
+          </div>
+
+          <div class="item item-body">
+              <img class="full-image" ng-src="{{vm.item.mainImage.medium}}">
+              <button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('Kup za mniej - OnePlus One #allegro.123424154', 'https://www.google.nl/images/srpr/logo4w.png', 'http://allegro.pl/auckcja/123424154')">Share on twitter</button>
+              <p>
+                  {{vm.item.description.plainText}}
+              </p>
+
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+              <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Like
+              </a>
+              <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Comment
+              </a>
+              <a class="tab-item" href="#">
+                  <i class="icon ion-share"></i>
+                  Share
+              </a>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
