@@ -1,12 +1,20 @@
 angular.module('starter.services')
     .factory('chartService', function() {
-        var values = [{from: 0, to: 10, color: '#C00000', price: 350.0},
-            {from: 10, to: 20, color: '#FFC000', price: 340.0},
-            {from: 20, to: 30, color: '#9BBB59', price: 330.0}
+        var values = [{from: 0, to: 10, color: '#C00000', price: 0},
+            {from: 10, to: 20, color: '#FFC000', price: 0},
+            {from: 20, to: 30, color: '#9BBB59', price: 0}
         ];
 
         return {
-            chart : _chart
+            init : _init,
+            chart : _chart,
+            values: values
+        }
+
+        function _init(_price){
+            values[0].price = _price;
+            values[1].price = _price * 0.9;
+            values[2].price = _price * 0.8;
         }
 
         function _chart(counter) {
@@ -23,7 +31,7 @@ angular.module('starter.services')
                 },
 
                 title: {
-                    text: 'Kup za mniej!'
+                    text: null
                 },
 
                 pane: {
