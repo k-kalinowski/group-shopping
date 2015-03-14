@@ -10,9 +10,10 @@
 
           <div class="item item-body">
               <img class="full-image" ng-src="{{vm.item.mainImage.medium}}">
-              <!--<button class="button button-calm" onclick="window.plugins.socialsharing.shareViaTwitter('{{vm.getName()}}', '{{vm.item.mainImage.small}}', 'http://allegro.pl/aukcja/123424154')">Share on twitter</button>-->
+              <button class="button button-calm">Kup teraz</button>
+              <button class="button button-calm" ng-click="vm.buy()">Kup za mniej</button>
+              <div id="container"></div>
               <button class="button button-calm" ng-click="vm.getName()">Share on twitter</button>
-
               <p>
                   {{vm.item.description.plainText}}
               </p>
