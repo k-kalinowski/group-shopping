@@ -1,8 +1,8 @@
 angular.module('starter.services')
     .factory('chartService', function() {
-        var values = [{from: 0, to: 10, color: 'rgb(192, 0, 0)', price: 350.0},
-            {from: 10, to: 20, color: 'rgb(255, 192, 0)', price: 340.0},
-            {from: 20, to: 30, color: 'rgb(155, 187, 89)', price: 330.0}
+        var values = [{from: 0, to: 10, color: '#C00000', price: 350.0},
+            {from: 10, to: 20, color: '#FFC000', price: 340.0},
+            {from: 20, to: 30, color: '#9BBB59', price: 330.0}
         ];
 
         return {
@@ -17,7 +17,9 @@ angular.module('starter.services')
                     plotBackgroundColor: null,
                     plotBackgroundImage: null,
                     plotBorderWidth: 1,
-                    plotShadow: false
+                    plotShadow: false,
+                    marginTop: 20,
+                    spacingTop: 20
                 },
 
                 title: {
@@ -49,19 +51,24 @@ angular.module('starter.services')
                 yAxis: {
                     labels: {
                         enabled: true,
-                        x: 35, y: -10
+                        x: 0, y: -0,
+                        style: {
+                            color: '#000000',
+                            fontSize:'20px',
+                            fontWeight: 'bold'
+                        }
                     },
                     tickPositions: [0, 10, 20, 30],
                     minorTickInterval: 'auto',
-                    minorTickWidth: 1,
+                    minorTickWidth: 2,
                     minorTickLength: 10,
                     minorTickPosition: 'inside',
-                    minorTickColor: '#666',
-                    tickPixelInterval: 30,
+                    minorTickColor: '#000000',
+                    tickPixelInterval: 60,
                     tickWidth: 2,
                     tickPosition: 'inside',
                     tickLength: 10,
-                    tickColor: '#666',
+                    tickColor: '#000000',
 
                     min: 0,
                     max: 30
@@ -69,7 +76,10 @@ angular.module('starter.services')
 
                 series: [{
                     dataLabels: {
-                        format: 'Kupiono już {y} sztuk!'
+                        format: 'Kupiono już {y} sztuk!',
+                        style: {
+                            fontSize:'20px'
+                        }
                     },
                     name: '',
                     data: [counter],
@@ -79,9 +89,9 @@ angular.module('starter.services')
                         valueSuffix: ' sztuk'
 
                     }
-                }, {name: '350,00 zł', color: 'rgb(192, 0, 0)', showInLegend: true},
-                    {name: '340,00 zł', color: 'rgb(255, 192, 0)', showInLegend: true},
-                    {name: '330,00 zł', color: 'rgb(155, 187, 89)', showInLegend: true}
+                }/*, {name: '350,00 zł', color: '#C00000', showInLegend: true},
+                    {name: '340,00 zł', color: '#FFC000', showInLegend: true},
+                    {name: '330,00 zł', color: '#9BBB59', showInLegend: true}*/
                 ]
 
             });

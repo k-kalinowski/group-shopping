@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
         };
 
         vm.buy = function(){
-            chartService.chart(vm.counter++);
+            chartService.chart(++vm.counter);
         };
 
         var promise = offerService.getItem($state.params.id);
