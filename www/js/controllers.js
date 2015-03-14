@@ -33,33 +33,35 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+.controller('OfferCtrl', function($scope, $log, $state, $stateParams, offerService) {
+        var vm = this;
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+        vm.getName = function(){
+            return window.plugins.socialsharing.shareViaTwitter("Kup za mniej - " + vm.item.name  + " #allegro" + vm.item.id, vm.item.mainImage.small, 'http://allegro.pl/aukcja/123424154');
+        };
+
+        var promise = offerService.getItem($state.params.id);
+
+        promise.then(function(result){
+            vm.item = result.data;
+        }, function(error){
+            $log.error('failure loading items', error);
+        });
 })
 
 .controller('SearchController', function($scope, $log, $stateParams, searchService) {
-        //var vm = this;
-        $scope.criteria = {
+        var vm = this;
+        vm.criteria = {
             text:""
         };
         $scope.search = function() {
-            var promise = searchService.getItems($scope.criteria.text);
+            var promise = searchService.search(vm.criteria.text);
             promise.then(
                 function (result) {
-                    $scope.items = result.data.offers;
+                    vm.items = result.data.offers;
                 },
-                function (errorPayload) {
-                    $log.error('failure loading items', errorPayload);
+                function (error) {
+                    $log.error('failure loading items', error);
                 });
         }
-    })
+    });
